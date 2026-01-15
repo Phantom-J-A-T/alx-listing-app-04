@@ -3,6 +3,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import PropertyDetail from "@/components/property/PropertyDetail";
 import { PropertyProps } from "@/interfaces";
+import ReviewSection from "@/components/property/ReviewSection";
 
 export default function PropertyDetailPage() {
   const router = useRouter();
@@ -55,5 +56,10 @@ export default function PropertyDetailPage() {
     );
   }
 
-  return <PropertyDetail property={property} />;
+  return (
+    <>
+      <PropertyDetail property={property} />
+      <ReviewSection propertyId={id as string} />
+    </>
+  );
 }
